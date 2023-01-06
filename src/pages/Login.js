@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom'
 import Mainbar from './mainbar/mainbar'
 
 function Login() {
+  const [ username, setUsername ] = useState('')
   const [ email, setEmail ] = useState('')
   const [ pass, setPass ] = useState('')
 
@@ -12,13 +13,14 @@ function Login() {
 
   useEffect(()=>{
     console.log(email, pass, state)
-  }, [email, pass, state])
+  }, [username, email, pass, state])
 
   const login = (e) => {
     e.preventDefault();
     dispatch({
       type: 'LOGIN_USER',
       payload: {
+        username,
         email,
         pass
       }
@@ -35,6 +37,13 @@ function Login() {
           <br/>
           <br/>
           <div className="mb-5 mt-5">
+            <label htmlFor ="email" className="form-label text-light">Username:</label>
+            <input type="username" className="form-control" id="username" placeholder="Enter username" name="username" 
+              value={username}
+              onChange={e=>{setUsername(e.target.value)}}
+            />
+          </div>
+          <div className="mb-5 ">
             <label htmlFor ="email" className="form-label text-light">Email:</label>
             <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" 
               value={email}

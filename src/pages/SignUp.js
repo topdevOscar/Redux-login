@@ -11,7 +11,7 @@ function SignUp() {
   const state = useSelector(state=>state)
 
   useEffect(()=>{
-    console.log(email, pass, state)
+    console.log(username, email, pass, confirmpass, state)
   }, [email, pass, state])
 
   useEffect(()=>{
@@ -23,13 +23,15 @@ function SignUp() {
     })
   }, [])
 
-  const register = async (e) => {
-    await e.preventDefault();
-    await dispatch({
+  const register = (e) => {
+    e.preventDefault();
+    dispatch({
       type: 'ADD_USER',
       payload: {
+        username,
         email,
-        pass
+        pass,
+        confirmpass
       }
     })
     // window.localStorage.setItem('users', state.users)
