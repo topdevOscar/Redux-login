@@ -38,7 +38,7 @@ const Mainbar = () =>{
         <div className="first-line">
           <div className="row">
             <div className="collect col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6">
-              <button className="button text-dark text-size">Collection</button>
+              <button className="button text-dark ">Collection</button>
               <div className="mint">
                 Available to Mint
               </div>          

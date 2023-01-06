@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Mainbar from './mainbar/mainbar'
 
 function Login() {
   const [ username, setUsername ] = useState('')
   const [ email, setEmail ] = useState('')
-  const [ pass, setPass ] = useState('')
+  const [ password, setPassword ] = useState('')
 
   const dispatch = useDispatch()
   const state = useSelector(state=>state)
 
   useEffect(()=>{
-    console.log(email, pass, state)
-  }, [username, email, pass, state])
+    console.log(email, password, state)
+  }, [username, email, password, state])
 
   const login = (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ function Login() {
       payload: {
         username,
         email,
-        pass
+        password
       }
     })
   }
@@ -51,10 +51,10 @@ function Login() {
             />
           </div>
           <div className="mb-5">
-            <label htmlFor ="pwd" className="form-label text-light">Password:</label>
-            <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pswd" 
-              value={pass}
-              onChange={e=>{setPass(e.target.value)}}
+            <label htmlFor ="pwd" className="form-label text-light">passwordword:</label>
+            <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd" 
+              value={password}
+              onChange={e=>{setPassword(e.target.value)}}
             />
           </div>
           <button onClick={login} className="btn btn-primary">Login</button>

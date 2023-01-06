@@ -28,24 +28,37 @@ function SignUp() {
     handleSubmit, 
     reset, 
     formState: {errors}
-  } = useForm({
-    resolver: yupResolver(validationSchema)
+  } = useForm({resolver: yupResolver(validationSchema)
   });
   
-  const onSubmit = data => {
+  const onSubmit = (data) => {
+    //Api send 
+    dispatch({
+            type: 'ADD_USER',
+            payload: {
+            username,
+            email,
+            password,
+            confirmpassword
+          }
+        })
+    reset();
+    console.log(data)
+    // e.target.reset();
     console.log(JSON.stringify(data, null, 2));
   };
+  
   const [username, setUsername] = useState('')
   const [ email, setEmail ] = useState('')
-  const [ pass, setPass ] = useState('')
-  const [ confirmpass, setConfirmpass] = useState('')
+  const [ password, setPassword ] = useState('')
+  const [ confirmpassword, setConfirmpassword] = useState('')
 
   const dispatch = useDispatch()
   const state = useSelector(state=>state)
 
   useEffect(()=>{
-    console.log(email, pass, state)
-  }, [email, pass, state])
+    console.log(email, password, state)
+  }, [email, password, state])
 
   useEffect(()=>{
     console.log('users storage', window.localStorage['users'])
@@ -61,8 +74,10 @@ function SignUp() {
   //   await dispatch({
   //     type: 'ADD_USER',
   //     payload: {
+  //       username,
   //       email,
-  //       pass
+  //       password,
+  //       confirmpassword
   //     }
   //   })
   //   // window.localStorage.setItem('users', state.users)
@@ -79,37 +94,77 @@ function SignUp() {
             <label htmlFor ="username" className="form-label text-warning">Username:</label>
             <input 
               type="username" 
-              className="form-control" 
-              id="email" 
+              id="username" 
               placeholder="Enter username" 
               name="username" 
               value={username}
+              {...register('username')}
               onChange={e=>setUsername(e.target.value)}
-              {...register('fullname')}
+              className={`form-control ${errors.username ? 'is-invalid' : ''}`}
             />
+            <div className='invalid-feedback'>{errors.username?.message}</div>
           </div>
-          <div className="mb-5 ">
+          <div className="form-group mb-5 ">
             <label htmlFor ="email" className="form-label text-warning">Email:</label>
-            <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" 
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="Enter email" 
+              name="email" 
+              defaultValue={""}
               value={email}
+              {...register('email')}
               onChange={e=>setEmail(e.target.value)}
+              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
             />
+            <div className='invalid-feedback'>{errors.email?.message}</div>
           </div>
-          <div className="mb-5">
+          <div className="form-group mb-5">
             <label htmlFor ="pwd" className="form-label text-warning">Password:</label>
-            <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pswd" 
-              value={pass}
-              onChange={e=>setPass(e.target.value)}
+           <input 
+              type="password" 
+              id="password" 
+              placeholder="Enter password" 
+              name="password" 
+              value={password}
+              {...register('password')}
+              onChange={e=>setPassword(e.target.value)}
+              className={`form-control ${errors.password ? 'is-invalid' : ''}`}
             />
+            <div className='invalid-feedback'>{errors.password?.message}</div>
           </div>
-          <div className="mb-5">
+          <div className="form-group mb-5">
             <label htmlFor ="pwd" className="form-label text-warning">Confirm:</label>
-            <input type="password" className="form-control" id="pwd" placeholder="Confirm password" name="confirmpswd" 
-              value={confirmpass}
-              onChange={e=>setConfirmpass(e.target.value)}
+            <input 
+              type="password" 
+              id="password" 
+              placeholder="Confirm password" 
+              name="confirmpassword" 
+              value={confirmpassword}
+              {...register('confirmPassword')}
+              onChange={e=>setConfirmpassword(e.target.value)}
+              className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}          
             />
+            <div className='invalid-feedback'>
+              {errors.confirmPassword?.message}
+            </div>
           </div>
-          <button type="submit" className="btn btn-primary" onClick={register}>SignUp</button>
+          <div className='form-group'>
+            <button 
+            type="submit" 
+            className="btn btn-primary" 
+            // onClick={register}
+          >
+            SignUp
+          </button>
+          <button
+            type='button'
+            onClick={()=>reset({ username: "", password: "", email: ""})}
+            className='btn btn-warning float-right'
+          >
+            Reset
+          </button>
+          </div>
         </form>
       </div>
     </div>  
