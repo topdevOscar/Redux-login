@@ -24,22 +24,21 @@ const Mainbar = () =>{
  
   return(
     <div className="main ">
-      <div className="row">
-        <br/>
-        <br/>
         <br/>
         <br/>
         <div className="port">
+      <div className="row">
           NFTs Portfolio
         </div>
+        <br/>
         <div className="detail">
           Below are listed the stats for NFT collections and individual assets that have sold for the highest prices. We the data list in descending order.
-
         </div>
+        <br/>
         <div className="first-line">
           <div className="row">
             <div className="collect col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6">
-              <button className="button">Collection</button>
+              <button className="button text-dark text-size">Collection</button>
               <div className="mint">
                 Available to Mint
               </div>          
