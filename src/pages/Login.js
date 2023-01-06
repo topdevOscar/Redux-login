@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import Mainbar from './mainbar/mainbar'
 
 function Login() {
   const [ email, setEmail ] = useState('')
@@ -24,7 +26,7 @@ function Login() {
   }
 
   return (
-    <>
+    <div className='bg-dark'>
     {
       !state || !state.user ?
       <div className='container' style={{maxWidth: "600px"}}>
@@ -33,14 +35,14 @@ function Login() {
           <br/>
           <br/>
           <div className="mb-5 mt-5">
-            <label htmlFor ="email" className="form-label">Email:</label>
+            <label htmlFor ="email" className="form-label text-light">Email:</label>
             <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" 
               value={email}
               onChange={e=>{setEmail(e.target.value)}}
             />
           </div>
           <div className="mb-5">
-            <label htmlFor ="pwd" className="form-label">Password:</label>
+            <label htmlFor ="pwd" className="form-label text-light">Password:</label>
             <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pswd" 
               value={pass}
               onChange={e=>{setPass(e.target.value)}}
@@ -51,11 +53,12 @@ function Login() {
         </form>
       </div>
       :
-      <div>
-        Loged In
-      </div>
+      <Mainbar />
+      // <div>
+      //   Loged In
+      // </div>
     }
-    </>
+    </div>
     
     
   )

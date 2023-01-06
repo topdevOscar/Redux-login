@@ -1,0 +1,109 @@
+.main{
+  display: flex;
+  width: 86.1%;
+  margin: auto;
+}
+.port{
+  font-family: 'Acid Grotesk TP';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  text-align: left;
+  font-feature-settings: 'ss02' on, 'liga' off;
+  color: #FFFFFF;
+  margin-top: 5%;
+  padding-bottom: 1%;
+}
+.detail{
+  width: 45.8%;
+  font-family: 'Acid Grotesk TP';
+  font-size: 16px;
+  line-height: 165%;
+  text-align: left;
+  font-feature-settings: 'ss02' on, 'liga' off;
+  color: #AAADB3;
+}
+.first-line{
+  margin-top: 5%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+.collect{
+  display: flex;
+  align-items: center;
+  width: 20%;
+  background: #2D2F32;
+  border-radius: 24px;
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  background: #BBED55;
+  border-radius: 32px;
+  margin: 5px;
+}
+.mint{
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #AAADB3;
+}
+
+.me-2{
+  background-color:  #2D2F32;;
+}
+.row{
+  justify-content: space-between;
+}
+.card-back{
+  margin-top: 5%;
+}
+.intro{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  align-content: center;
+  padding: 3%;
+
+  width: 100%;  
+  border: 1px solid #3B3C3F;
+  border-radius: 24px;
+}
+.stream{
+  width: 20%; 
+  border: 1px solid #3B3C3F;
+  border-radius: 48px;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.month{
+  width: 80%;
+  text-align: left;
+  font-family: 'Acid Grotesk TP';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 165%;
+  font-feature-settings: 'ss02' on, 'liga' off;
+  margin-bottom: 5%;
+
+
+  color: #FFFFFF;
+}
+.perks{
+  
+  display: flex;
+  justify-content: center;
+
+}
+.ca{
+  margin-bottom: 5%;
+}
