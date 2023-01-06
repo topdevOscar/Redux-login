@@ -31,7 +31,7 @@ function Login() {
     <div className='bg-dark'>
     {
       !state || !state.user ?
-      <div className='container' style={{maxWidth: "600px"}}>
+      <div className='container' style={{maxWidth: "600px", height: '100vh'}}>
         <form>
           <br/>
           <br/>

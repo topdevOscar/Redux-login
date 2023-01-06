@@ -38,7 +38,7 @@ function SignUp() {
   }
 
   return (
-    <div className='bg-dark' style={{maxWidth: "100%" }}>
+    <div className='bg-dark' style={{maxWidth: "100%", height: '100vh'}}>
       <div className='container' style={{maxWidth: "600px" }}>
         <form>
           <br/>

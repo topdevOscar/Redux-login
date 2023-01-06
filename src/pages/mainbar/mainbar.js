@@ -25,6 +25,10 @@ const Mainbar = () =>{
   return(
     <div className="main ">
       <div className="row">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <div className="port">
           NFTs Portfolio
         </div>
