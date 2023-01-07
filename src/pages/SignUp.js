@@ -136,8 +136,8 @@ function SignUp() {
           <div className="form-group mb-5">
             <label htmlFor ="pwd" className="form-label text-warning">Confirm:</label>
             <input 
-              type="password" 
-              id="password" 
+              type="confirmpassword" 
+              id="confirmpassword" 
               placeholder="Confirm password" 
               name="confirmpassword" 
               value={confirmpassword}
@@ -159,7 +159,7 @@ function SignUp() {
           </button>
           <button
             type='button'
-            onClick={()=>reset({ username: "", password: "", email: ""})}
+            onClick={()=>reset({ username: "", password: "", email: "", confirmPassword: "",})}
             className='btn btn-warning float-right'
           >
             Reset
